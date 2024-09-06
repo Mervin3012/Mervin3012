@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card Example</title>
+   <style>
+.head{
+    color:#070707 ;
+}    
+a{
+    text-decoration: none;
+}
+.navbar{
+    background-color:rgb(2, 2, 68);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.navdiv{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+li{
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+}
+li a{
+    color: rgb(247, 242, 242);
+    font-size: 20px;
+    font-weight: bolder;
+    margin-right: 23px;
+    margin-left: 25px;
+    
+}
+button{
+    background-color:rgb(238, 161, 18);
+    margin-left: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+    color: black;
+}
+button:hover {
+    background-color:rgb(101, 207, 243);
+}
+
+button a{
+    color: white;font-weight: bolder;font-size: 15px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn { 
+    /* background-color: #333; */
+    color: rgb(240, 234, 234);
+    padding: 14px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color:rgb(238, 161, 18); /* Darker background on hover */
+}
+
+.dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute;
+    background-color:gainsboro;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    color: black;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: lightseagreen; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown content when hovering over dropdown */ 
+
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin: 0;
+    flex-wrap: wrap;
+}
+.flex
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card {
+    background: #fff;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    overflow:hidden;
+    box-shadow: 1px 4px 8px rgb(7, 7, 7);
+    width: 272px;
+    height:500px;
+    margin: 30px;
+    transition: transform 0.3s;
+    float: left;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.product-content {
+    padding: 15px;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+    color: #070707;
+}
+.price-info {
+    margin: 0 0 15px;
+}
+
+.product-price {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #080808;
+}
+
+.price-per-pound {
+    color: #e94e77;
+    font-weight: bold;
+}
+
+.price-per-kg {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.rating {
+    margin: 0 0 15px;
+}
+
+.star {
+    color:rgb(190, 8, 8);
+    font-size: 1.25rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.add-to-cart,
+.buy-now {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    flex: 1;
+}
+
+.add-to-cart {
+    background-color:rgb(9, 107, 204);
+    color: #fff;
+}
+
+.add-to-cart:hover {
+    background-color: #050505;
+}
+
+.buy-now {
+    background-color: #258b28;
+    color: #fff;
+}
+
+.buy-now:hover {
+    background-color: #080808;
+}
+.strike {
+    color: rgb(10, 10, 10); /* Light grey color for the old price */
+    font-size: 1.25rem;
+    text-decoration: line-through;
+    margin-left: 10px; 
+}
+.footer{
+    background-color:rgb(20, 19, 18);
+}
+.footer footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer footer div {
+    margin: 20p 10px 10px 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: normal;
+    margin-left: 50px;
+    margin-right: 50px;
+    color:rgb(248, 245, 245);
+
+}
+.footer footer div p{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+.footer footer .column5 p{
+    display: inline;
+}
+.footer column6{
+    padding: 10px;
+}
+.footer column6 p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.copy{
+    color: white;
+}
+
+/* ...!!!MEDIA QUERY...!!! */
+@media only screen and (min-width:900px) and (max-width:1199px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+     width: 100%;
+    }
+    .bottom-image div button{
+     display:block;
+    }
+    .products{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+    }
+    
+@media only screen and (min-width:768px) and (max-width:899px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+      width: 100%;
+    }
+    .bottom-image div button{
+      display:block;
+    }
+    .navdiv{
+        display: flex;
+        text-align: center;
+        justify-content:space-around;
+        padding:20px 0;
+    }
+    .dropdown{
+      display:none;
+    } 
+    .products{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+  }
+@media only screen and (min-width:601px) and (max-width:767px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+      width: 100%; 
+    }
+    .bottom-image div button{
+      display:block;
+    }
+    .navbar{
+      padding-left:80px ;
+      padding-right:80px ;
+    }
+    .dropdown{
+      display: none;
+    }
+    .box-button{
+      display:none;
+    }
+    .products{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+  }
+  @media screen and (min-width:250px) and (max-width:600px){
+    .nav-links .l1{
+    display: none;
+}
+.bottom-image img{
+    width: 100%; 
+}
+.bottom-image div button{
+    display:block;
+}
+.navbar{
+    padding-left:90px;
+    padding-right:90px ;
+}
+.dropdown{
+    display: none;
+}
+.box-button{
+    display: none;
+}
+.products{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap; 
+}
+}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <img src="images/icons8-supermarket-64 (1).png" alt="" width="55px" height="60px">
+            <ul>
+                <li><a href="index.html"><img src="images/icons8-home-64.png"alt="" width="20px" height="17px">HOME</a></li>
+                <li><a href="about.html"><img src="images/icons8-about-64.png" alt="" width="20px" height="17px">ABOUT</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn"><img src="images/icons8-menu-64.png" alt="" width="20px" height="17px">MENU</a>
+                    <div class="dropdown-content">
+                        <a href="fruits.html">Fruits</a>
+                        <a href="vegetables.html">Vegetables</a>
+                        <a href="grociers.html">Groceries</a>
+                        <a href="snacks AND beverages.html">Snacks & Beverages</a> 
+                <li><a href="review.html"><img src="images/icons8-review-64.png" alt="" width="20px" height="17px">REVIEW</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn"><img src="images/icons8-login-64.png" alt="" width="20px" height="17px">LOGIN</a>
+                    <div class="dropdown-content">
+                        <a href="login.html">Login</a>
+                        <a href="register.html">Register</a></li>
+               <li><a href="contact us.html"><img src="images/icons8-contact-us-64 (1).png" alt="" width="20px" height="17px">CONTACT US</a></li>
+                <button class="box-button">SIGN IN</button>
+                <button class="box-button">Search</button>
+            </ul>
+        </div>
+       </nav>
+            <div class="main logo"><img src="images/super3 1.jpeg.jpg" alt="" width="100%" height="40%"></div> 
+            <br> 
+        <div class="head">
+        <h1>*Fresh Fruits*</h1></div>
+            <div class="flex">
+                <div class="product-card">
+                   <img src="images/watermelon 4.jpeg" alt="Watermelon" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Watermelon</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">35</div>
+                           <div><span class="strike">40</span></div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button></div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/apple-red 14.jpeg" alt="Apple" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Apple</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">250</div>
+                           <div><span class="strike">300</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/banana 1.jpeg" alt="Banana" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Banana</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">40</div>
+                           <div><span class="strike">50</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/dragon-fruit 16.jpeg" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Dragon Fruit</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">54</div>
+                           <div><span class="strike">95.89</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/grapes-black 15.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Black Grapes</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">146</div>
+                           <div><span class="strike">200</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/grapes-green  2.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Green Grapes</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">154</div>
+                           <div><span class="strike">210.48</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/jackfruit  7.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Jackfruit</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">200</div>
+                           <div><span class="strike">304.32</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/guava 8.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Guava</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">85</div>
+                           <div><span class="strike">116.44</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/blueberry 10.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Blueberrys</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">207</div>
+                           <div><span class="strike">382.19</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/kiwi-green 11.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Kiwi</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">450</div>
+                           <div><span class="strike">500.89</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/mango 12.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Mango</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">198.16</div>
+                           <div><span class="strike">200.08</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/papaya  3.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Papaya</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">50.08</div>
+                           <div><span class="strike">68.32</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/orange 18.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Orange</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">143</div>
+                           <div><span class="strike">195.89</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/muskmelon  6.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Muskmelon</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">75.55</div>
+                           <div><span class="strike">88.89</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/mosambi 17.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Mosambi</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">131</div>
+                           <div><span class="strike">191.78</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/mango 19.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Mango</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">61.5</div>
+                           <div><span class="strike">84.93</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/pear-green-imported 13.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Pear-Green</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">402.5</div>
+                           <div><span class="strike">550.69</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/pineapple 20.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Pineapple</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">79</div>
+                           <div><span class="strike">108.22</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/pomegranate 6.jpeg" alt="" width="300"   height="265px">
+                   <div class="product-content">
+                       <h2 class="product-title">Pomegranate</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">350</div>
+                           <div><span class="strike">486.55</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+               <div class="product-card">
+                   <img src="images/sapota 9.jpeg" alt="" class="product-image">
+                   <div class="product-content">
+                       <h2 class="product-title">Sapota</h2>
+                       <div class="price-info">
+                           <select>
+                               <option value="1kg">1kg</option>
+                               <option value="2Kg">2Kg</option>
+                               <option value="3Kg">3kg</option>
+                               <option value="4kg">4kg</option>
+                               <option value="5Kg">5Kg</option>
+                           </select>
+                       </div>
+                       <div>
+                           <img src="images/rupee-100.png" alt="Rupees" width="13px" height="13px">140</div>
+                           <div><span class="strike">191.78</span>
+               
+                       </div>
+                       <div class="rating">
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9733;</span>
+                           <span class="star">&#9734;</span>
+                       </div>
+                       <div class="button-container">
+                           <button class="add-to-cart">Add to Cart</button>
+                           <button class="buy-now">Buy Now</button>
+                       </div>
+                   </div>
+               </div>
+                   </div>
+                   <div class="footer">
+                    <footer>
+                        <div class="column1">
+                            <h2>LOCATION</h2>
+                               <h1><P>Namakkal</P>
+                               <p>Salem</p>
+                               <p>Trichy</p>
+                               <p>Chennai</p>
+                               <p>Coimbatore</p></h1>
+                        </div>
+                        <div class="colunm2">
+                            <h2>Quick links</h2>
+                               <h1><p>Home</p>
+                               <p>About</p>
+                               <p>Menu</p>
+                               <p>Review</p>
+                               <p>Contact</p></h1>
+                        </div>
+                        <div class="column3">
+                            <h2>CONTACT</h2>
+                               <h1><p>+91 04286223443</p>
+                               <p>+91 8903512859</p>
+                               <p>krishnan124@gmail.com</p>
+                               <p>superstore@gmail.com</p>
+                               <p>groceries@gmail.com</p></h1>
+                        </div>
+                        <div class="column4">
+                            <h2>OUR SERVICE</h2>
+                               <h1><p>Fast dekivery</p>
+                              <p>Easy Delivery</p>
+                               <p>24 x 7 Services</p></h1>
+                        </div>
+                        <div class="column5"> 
+                            <h2>FOLLOW US</h2>
+                               <P><img src="images/icons8-twitter-64.png" alt="" width="40px" height="40px"></P>
+                               <p><img src="images/icons8-instagram-64.png" alt=""width="40px" height="40px"></p>
+                               <p><img src="images/icons8-youtube-64.png" alt=""width="40px" height="40px"></p>
+                               <p><img src="images/icons8-whatsapp-64.png" alt=""width="40px" height="40px"></p>
+                        </div>
+                     </footer>
+                     <div class="copy">
+                     <center>
+                        <h3>&copy;2024 Super Store Private Limited . All Rights Reserved.</h3>
+                          </center></div>
+                </div>
+                </div>
+                           
+</body>
+</html>

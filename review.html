@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STyle>
+      a{
+    text-decoration: none;
+}
+.navbar{
+    background-color:rgb(2, 2, 68);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+    /* margin-inline-start: auto; */
+    position: sticky;
+    top: 0PX;
+    z-index: 1000;
+}
+.navdiv{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+li{
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+}
+li a{
+    color: white;
+    font-size: 19px;
+    font-weight: bolder;
+    margin-left: 22px;
+    cursor: pointer;
+    margin-right: 22px;
+}
+button{
+    background-color: rgb(238, 161, 18);
+    margin-left: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+}
+button:hover {
+    background-color:rgb(101, 207, 243);
+}
+
+button a{
+    color: black;font-weight: bolder;font-size: 20px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+     /* Match the navbar background */
+    color: white;
+    padding: 14px 20px;
+    font-size: 20px;
+    border: none;
+}
+
+.dropbtn:hover {
+    background-color:rgb(238, 161, 18); 
+    color: white;
+}
+
+.dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute;
+    background-color: rgb(243, 233, 233);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: lightseagreen; /* Light grey background on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown content when hovering over dropdown */ 
+
+}
+.delivery
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.delivery .delivery-box
+{
+    width:250px ;
+    height:500px;
+    border: 3px solid rgb(1, 1, 19);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: lightgrey;
+    box-shadow: 1px 4px 8px rgb(5, 5, 5);
+
+}
+.rating {
+    margin: 0 0 0px;
+}
+
+.star {
+    color: red;
+    font-size: 2rem;
+}
+.paragraph{
+    font-size: 17px;
+    color: black;
+}
+.footer{
+    background-color:rgb(12, 12, 12);
+}
+.footer footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer footer div {
+    margin: 20p 10px 10px 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: normal;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: rgb(250, 248, 248);
+}
+.footer footer div p{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+.footer footer .column5 p{
+    display: inline;
+}
+.footer column6{
+    padding: 10px;
+}
+.footer column6 p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.copy{
+    color: white;
+}
+/* ...!!!MEDIA QUERY...!!! */
+@media only screen and (min-width:900px) and (max-width:1000px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+     width: 100%;
+    }
+    .bottom-image div button{
+     display:block;
+    }
+    .products{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+    }
+    
+    @media only screen and (min-width:619px) and (max-width:899px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+      width: 100%;
+    }
+    .bottom-image div button{
+      display:block;
+    }
+    .navdiv{
+        display: flex;
+        text-align: center;
+        justify-content:space-around;
+        padding:20px 0;
+    }
+    .dropdown{
+      display:none;
+    } 
+    .products{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+  }
+    @media only screen and (max-width:620px) and (min-width:200px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+      width: 100%; 
+    }
+    .bottom-image div button{
+      display:block;
+    }
+    .navbar{
+      padding-left:50px ;
+      padding-right:50px ;
+    }
+    .dropdown{
+      display: none;
+    }
+    .box-button{
+      display: none;
+    }
+    .products{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+
+  }
+  @media screen and (min-width:250px) and (max-width:600px){
+    .nav-links .l1{
+    display: none;
+}
+.bottom-image img{
+    width: 100%; 
+}
+.bottom-image div button{
+    display:block;
+}
+.navbar{
+    padding-left:90px;
+    padding-right:90px ;
+}
+.dropdown{
+    display: none;
+}
+.box-button{
+    display: none;
+}
+.products{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap; 
+}
+}
+
+</STyle>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+                <img src="images/icons8-supermarket-64 (1).png" alt="" width="55px" height="60px">
+                <ul>
+                <li><a href="index.html"><img src="images/icons8-home-64.png" alt="" width="20px"  height="17px">HOME</a></li>
+                <li><a href="about.html"><img src="images/icons8-about-64.png" alt="" width="20px" height="17px"> ABOUT</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn"><img src="images/icons8-menu-64.png" alt="" width="20px" height="17px"> MENU</a>
+                    <div class="dropdown-content">
+                        <a href="fruits.html">Fruits</a>
+                        <a href="vegetables.html">Vegetables</a>
+                        <a href="grociers.html">Grociers</a>
+                        <a href="snacks AND beverages.html">Snacks And Beverges</a>
+                <li><a href="review.html"><img src="images/icons8-review-64.png" alt="" width="20px"  height="17px">  REVIEW</a>
+                <li class="dropdown">
+                    <a href="" class="dropbtn"><img src="images/icons8-login-64.png"alt="" width="20px"  height="17px">    LOGIN</a>
+                    <div class="dropdown-content">
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Register</a></li>
+                <li><a href="contact us.html"><img src="images/icons8-contact-us-64 (1).png"alt="" width="20px"  height="17px">  CONTACT US</a></li>
+                <button class="box-button">SIGN IN</button>
+                <!-- <input type="text" placeholder="Search"> -->
+                <button class="box-button">SIGN UP</button>
+            </ul>
+        </div>
+    </div>
+</div>
+    </nav>
+   </nav> <div class="special-delivery">
+        <center>
+               <h1>**CUSTOMER REVIEWS**</h1>
+               <div class="delivery">
+                     <div class="delivery-box1 delivery-box">
+                       <img src="images/men1 (2).jpg" alt="" width="200PX" height="180px">
+                        <h1>*Deepak*</h1>
+                        <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                        <div class="paragraph">
+                            <p><h4>It is the best company has the customer relations about any details of package. In any case, they are really willing to solve the problem. There are lots of food variety compare to other websites.</h4></p></div>
+               </div>
+                <div class="delivery-box2 delivery-box">
+                       <img src="images/women1 (2).jpg" alt="" width="200px" height="180px">
+                       <h1>*Deepika*</h1>
+                       <div class="rating">
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                    </div>
+        
+                        <div class="paragraph"><p><h4>It's not called Best grocery for nothing. I've been shopping from them for a few years now and there is always good availability, fast delivery for all over india.And good products for all in website</h4></p></div>
+               </div>
+               <div class="delivery-box3 delivery-box">
+                       <img src="images/men2 (2).jpg" alt="" width="200px" height="180px">           
+                         <h1>*Vijaya Kumar*</h1>
+                         <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                         <div class="paragraph"><p><h4>Very fast dispatch, I was really surprised at how fast it came. The glass products were packaged very safely in bubble wrap and arrived intact. Perishable goods also packed very well and were still cold on arrival.</h4></p></div>
+               </div>
+               <div class="delivery-box4 delivery-box">
+                       <img src="images/women2 (2).jpg" alt="" width="200px" height="180px"> 
+                         <h1>*Roshini*</h1>
+                         <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                         <div class="paragraph"><p><h4>They were always accessible and open to help when I had a problem regarding the delivery address. Even though the products have already been shipped they were able to change the delivery address for me, thank you.</h4></p></div>
+               </CENTER>
+               <div class="footer">
+                <footer>
+                    <div class="column1">
+                        <h2>Location</h2>
+                           <h1><P>Namakkal</P>
+                           <p>Salem</p>
+                           <p>Trichy</p>
+                           <p>Chennai</p>
+                           <p>Coimbatore</p></h1>
+                    </div>
+                    <div class="colunm2">
+                        <h2>Quick links</h2>
+                           <h1><p>Home</p>
+                           <p>About</p>
+                           <p>Menu</p>
+                           <p>Review</p>
+                           <p>Contact</p></h1>
+                    </div>
+                    <div class="column3">
+                        <h2>Contact</h2>
+                           <h1><p>+91 04286223443</p>
+                           <p>+91 8903512859</p>
+                           <p>krishnan124@gmail.com</p>
+                           <p>superstore@gmail.com</p>
+                           <p>groceries@gmail.com</p></h1>
+                    </div>
+                    <div class="column4">
+                        <h2>Our service</h2>
+                           <h1><p>Fast dekivery</p>
+                          <p>Easy Delivery</p>
+                           <p>24 x 7 Services</p></h1>
+                    </div>
+                    <div class="column5"> 
+                        <h2>Follow Us</h2>
+                        <P><img src="images/icons8-twitter-64.png" alt="" width="40px" height="40px"></P>
+                        <p><img src="images/icons8-instagram-64.png" alt=""width="40px" height="40px"></p>
+                        <p><img src="images/icons8-youtube-64.png" alt=""width="40px" height="40px"></p>
+                        <p><img src="images/icons8-whatsapp-64.png" alt=""width="40px" height="40px"></p>
+                    </div>
+                 </footer>
+                 <div class="copy">
+                 <center>
+                    <h2>&copy;2024 Super Store Private Limited . All Rights Reserved.</h2>
+                      </center></div>
+            </div>
+          
+</body>
+</html>

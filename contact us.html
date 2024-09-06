@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        a{
+    text-decoration: none;
+}
+.navbar{
+    background-color:rgb(2, 2, 68);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+    /* margin-inline-start: auto; */
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+}
+.navdiv{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+li{
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+}
+li a{
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 19px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+button {
+    background-color:rgb(238, 161, 18);
+    margin-left: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+}
+button a{
+    color: black;font-weight: bolder;font-size: 20px;
+}
+button:hover {
+    background-color:rgb(101, 207, 243);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+     /* Match the navbar background */
+    color: white;
+    padding: 14px 20px;
+    font-size: 20px;
+    border: none;
+}
+
+.dropbtn:hover {
+    background-color:rgb(238, 161, 18); 
+    color: white;
+}
+
+.dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(146, 143, 143, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: lightseagreen; /* Light grey background on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown content when hovering over dropdown */ 
+
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color:rgb(249, 249, 250);
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    /* background:rgb(163, 29, 29); */
+    box-shadow: 0 0 10px rgba(12, 12, 12, 0.1);
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(238, 161, 18);
+    color:rgb(245, 239, 239);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.heading{
+    font-size: 24px;
+    color: rgb(19, 18, 18);
+}
+.heading i{
+    color:rgb(15, 15, 15);
+}
+.heading-1{
+    color:black;
+    font-size: xx-large;
+}
+.footer{
+    background-color: rgb(5, 5, 5);
+}
+.footer footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer footer div {
+    margin: 20p 10px 10px 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: normal;
+    margin-left: 50px;
+    margin-right: 50px;
+    color:rgb(243, 239, 239);
+}
+.footer footer div p{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+.footer footer .column5 p{
+    display: inline;
+}
+.footer column6{
+    padding: 10px;
+}
+.footer column6 p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+/* ...!!!MEDIA QUERY...!!! */
+@media only screen and (min-width:900px) and (max-width:1000px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+     width: 100%;
+    }
+    .bottom-image div button{
+     display:block;
+    }
+    .products{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+    }
+    
+    @media only screen and (min-width:619px) and (max-width:899px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+      width: 100%;
+    }
+    .bottom-image div button{
+      display:block;
+    }
+    .navdiv{
+        display: flex;
+        text-align: center;
+        justify-content:space-around;
+        padding:20px 0;
+    }
+    .dropdown{
+      display:none;
+    } 
+    .products{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+    
+  }
+    @media only screen and (max-width:620px) and (min-width:200px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+      width: 100%; 
+    }
+    .bottom-image div button{
+      display:block;
+    }
+    .navbar{
+      padding-left:50px ;
+      padding-right:50px ;
+    }
+    .dropdown{
+      display: none;
+    }
+    .box-button{
+      display: none;
+    }
+    .products{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+    
+  }
+  @media screen and (min-width:250px) and (max-width:600px){
+    .nav-links .l1{
+    display: none;
+}
+.bottom-image img{
+    width: 100%; 
+}
+.bottom-image div button{
+    display:block;
+}
+.navbar{
+    padding-left:0px;
+    padding-right:90px ;
+}
+.dropdown{
+    display: none;
+}
+.box-button{
+    display: none;
+}
+.products{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap; 
+}
+}
+body{
+    background-image:url(images.jpeg/super5\ \(3\).jpeg) ;
+    background-size: cover;
+
+}
+.contact-container{
+    background-color: rgb(153, 149, 149);
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <DIV class="navbar">
+                <img src="images/icons8-supermarket-64 (1).png" alt="" width="55px" height="60px">
+            </DIV>
+            <ul>
+                <li><a href="index.html"><img src="images/icons8-home-64.png" alt="" width="20px"  height="17px">HOME</a></li>
+                <li><a href="about.html"><img src="images/icons8-about-64.png" alt="" width="20px" height="17px">ABOUT</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn"><img src="images/icons8-menu-64.png" alt="" width="20px" height="17px">MENU^</a>
+                    <div class="dropdown-content">
+                        <a href="fruits.html">Fruits</a>
+                        <a href="vegetables.html">Vegetables</a>
+                        <a href="grociers.html">Groceries</a>
+                        <a href="snacks AND beverages.html">Snacks And Beverages</a>
+                <li><a href="review.html"><img src="images/icons8-review-64.png" alt="" width="20px"  height="17px">REVIEW</a>
+                <li class="dropdown">
+                    <a href="" class="dropbtn"><img src="images/icons8-login-64.png"alt="" width="20px"  height="17px">LOGIN^</a>
+                    <div class="dropdown-content">
+                    <a href="login.html">login</a>
+                    <a href="register.html">Register</a></li>
+                <li><a href="contact us.html"><img src="images/icons8-contact-us-64 (1).png"alt="" width="20px"  height="17px">CONTACT US</a></li>
+                <button class="box-button">SIGN IN</button>
+                <button class="box-button">SEARCH</button>
+            </ul>
+        </div>
+    </div>
+   </nav>
+    
+    <div class="contact-container">
+        <div class="container">
+           <center> <h1>CONTACT US</h1></center>
+        </div>
+        <form action="submit_form.php" method="post">
+            <br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+<center>
+    
+    <div class="heading-1"><h3>Contact Information</h3></div>
+    <div class="heading">
+        <p><i class="fas fa-phone"></i>+91-808 8919 888</p>
+        <p><i class="fas fa-envelope"></i> www.Kmc groups.gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i>Rose Garden, JP Nagar Phase 6, J. P. Nagar, Bengaluru</p></center>
+    </div>
+    <div class="footer">
+        <footer>
+            <div class="column1">
+                <h1>Location</h1>
+                   <h1><P>Namakkal</P>
+                   <p>Salem</p>
+                   <p>Trichy</p>
+                   <p>Chennai</p>
+                   <p>Coimbatore</p></h1>
+            </div>
+            <div class="colunm2">
+                <h1>Quick links</h1>
+                   <h1><p>Home</p>
+                   <p>About</p>
+                   <p>Menu</p>
+                   <p>Review</p>
+                   <p>Contact</p></h1>
+            </div>
+            <div class="column3">
+                <h1>Contact</h1>
+                   <h1><p>+91 04286223443</p>
+                   <p>+91 8903512859</p>
+                   <p>krishnan124@gmail.com</p>
+                   <p>superstore@gmail.com</p>
+                   <p>groceries@gmail.com</p></h1>
+            </div>
+            <div class="column4">
+                <h1>Our service</h1>
+                   <h1><p>Fast dekivery</p>
+                  <p>Easy Delivery</p>
+                   <p>24 x 7 Services</p></h1>
+            </div>
+            <div class="column5"> 
+                <h1>Follow Us</h1>
+                <P><img src="images/icons8-twitter-64.png" alt="" width="40px" height="40px"></P>
+                <p><img src="images/icons8-instagram-64.png" alt=""width="40px" height="40px"></p>
+                <p><img src="images/icons8-youtube-64.png" alt=""width="40px" height="40px"></p>
+                <p><img src="images/icons8-whatsapp-64.png" alt=""width="40px" height="40px"></p>
+            </div>
+         </footer>
+         <center>
+            <h3>&copy;2024 Super Store Private Limited . All Rights Reserved.</h3>
+              </center>
+    </div>
+</body>
+</html>

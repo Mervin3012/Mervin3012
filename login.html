@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+a{
+    text-decoration: none;
+}
+.navbar{
+    background-color:rgb(2, 2, 68);
+    position:sticky;
+    top: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.navdiv{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+li{
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+}
+li a{
+    color: rgb(248, 239, 239);
+    font-size: 20px;
+    font-weight: bolder;
+    margin-right:26px;
+    margin-left:25px;
+    cursor: pointer;
+    
+}
+
+button{
+    background-color:rgb(238, 161, 18);
+    margin-left: 15px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90px;
+    color: white;
+}
+button:hover {
+    background-color:rgb(101, 207, 243);
+}
+button a{
+    color: white;font-weight: bolder;font-size: 15px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn { 
+    /* background-color:black; */
+    color: rgb(253, 245, 245);
+    padding: 14px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color:rgb(238, 161, 18);
+}
+
+.dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    position: absolute;
+    background-color:rgb(245, 237, 237); 
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: rgb(8, 8, 8);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: lightseagreen; /* Light grey background on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown content when hovering over dropdown */ 
+
+}
+        body {
+            margin: 0;
+            padding: 0;
+            background-image:url(images/super5\ \(3\)\ -\ Copy.jpeg ) ;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0; 
+        }
+        .section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+        .container {
+            background-color: rgb(184, 184, 179) ; /* Semi-transparent white background for the form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #0c0c0c; /* Green background */
+            color: rgb(245, 238, 238);
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        /* ...!!!MEDIA QUERY...!!! */
+@media only screen and (min-width:900px) and (max-width:1199px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+     width: 100%;
+    }
+    .bottom-image div button{
+     display:block;
+    }
+    .products{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+    }
+    
+@media only screen and (min-width:768px) and (max-width:899px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+      width: 100%;
+    }
+    .bottom-image div button{
+      display:block;
+    }
+    .navdiv{
+        display: flex;
+        text-align: center;
+        justify-content:space-around;
+        padding:20px 0;
+    }
+    .dropdown{
+      display:none;
+    } 
+    .products{
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+  }
+@media only screen and (min-width:601px) and (max-width:767px){
+    .nav-links .l1{
+      display: none;
+    }
+    .bottom-image img{
+      width: 100%; 
+    }
+    .bottom-image div button{
+      display:block;
+    }
+    .navbar{
+      padding-left:80px ;
+      padding-right:80px ;
+    }
+    .dropdown{
+      display: none;
+    }
+    .box-button{
+      display:none;
+    }
+    .products{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    .flex{
+      display: flex;
+      flex-wrap: wrap; 
+    }
+  }
+  @media screen and (min-width:250px) and (max-width:600px){
+    .nav-links .l1{
+    display: none;
+}
+.bottom-image img{
+    width: 100%; 
+}
+.bottom-image div button{
+    display:block;
+}
+.navbar{
+    padding-left:90px;
+    padding-right:90px ;
+}
+.dropdown{
+    display: none;
+}
+.box-button{
+    display: none;
+}
+.products{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap; 
+}
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+           <img src="images/icons8-supermarket-64 (1).png" alt="" width="55px" height="60px">
+            <ul>
+                <li><a href="index.html"><img src="images/icons8-home-64.png"alt="" width="18px" height="18px">HOME</a></li>
+                <li><a href="about.html"><img src="images/icons8-about-64.png" alt="" width="18.5px" height="17.5px">ABOUT</a></li>
+                <li class="dropdown">
+                    <a href="" class="dropbtn"><img src="images/icons8-menu-64.png" alt="" width="19px" height="17px">MENU</a>
+                    <div class="dropdown-content">
+                        <a href="fruits.html">Fruits</a>
+                        <a href="vegetables.html">Vegetables</a>
+                        <a href="grociers.html">Groceries</a>
+                        <a href="snacks AND beverages.html">Snacks & Beverages</a></li>
+                <li><a href="review.html"><img src="images/icons8-review-64.png" alt="" width="19px" height="19px">REVIEW</a></li>
+               <li class="dropdown">
+                    <a href="" class="dropbtn"><img src="images/icons8-login-64.png" alt="" width="19px" height="19px">LOGIN</a>
+                    <div class="dropdown-content">
+                        <a href="login.html">Login</a>
+                        <a href="register.html">Register</a></li>
+                <li><a href="contact us.html"><img src="images/icons8-contact-us-64 (1).png" alt="" width="20px" height="19px">CONTACT US</a></li>
+                <button class="box-button">SIGN IN</button>
+                <button class="box-button">Search</button>
+            </ul>
+        </div>
+       </nav>
+    <section class="section">
+    <div class="container">
+        <h1><u>SIGN UP</u></h1>
+        <form action="#" method="post">
+            <table>
+                <tr>
+                    <td><label for="email">EMAIL'ID</label></td>
+                    <td><input type="email" id="email" name="email" required/></td>
+                </tr>
+                <tr>
+                    <td><label for="password">PASSWORD</label></td>
+                    <td><input type="password" id="password" name="password" required/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Login"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    </section>
+</body>
+</html>
